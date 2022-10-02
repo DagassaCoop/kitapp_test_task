@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-wrap: nowrap;
+
+
+  &__content {
+    flex: 1;
+  }
+}

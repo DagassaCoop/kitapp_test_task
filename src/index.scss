@@ -1,3 +1,5 @@
+@import "styles/styles.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +7,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-grey;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.content__box {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
 }
