@@ -10,17 +10,17 @@ const Currencies: React.FC = () => {
 
     const dispatch = useAppDispatch();
     const currencies: ICurrency[] = useAppSelector(state => state.app.currencies);
-    const [currentCurrencies, setCurrentCurrencies] = useState<ICurrency[]>([])
+    const [currentCurrencies, setCurrentCurrencies] = useState<ICurrency[]>(currencies)
     const [currentCurrency, setCurrentCurrency] = useState<string>('UAH')
 
 
 
     useEffect(() => {
+        console.log(currencies)
         if (currencies.length === 0) {
             dispatch(getCurrencies())
-        } else {
-            setCurrentCurrencies(currencies)
         }
+        setCurrentCurrencies(currencies)
     }, [currencies])
 
     useEffect(() => {
@@ -55,7 +55,7 @@ const Currencies: React.FC = () => {
                 <select className={'Currencies__options-select'} onChange={(e) => selectorHandler(e)} name="currencies" value={currentCurrency}>
                     {(currencies.map(c => c.cc)).map(c => {
                         return (
-                            <option value={c}>{c}</option>
+                            <option key={uuid()} value={c}>{c}</option>
                         )
                     })}
                 </select>
